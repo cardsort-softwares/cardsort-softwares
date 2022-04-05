@@ -105,6 +105,7 @@
       "options": {
         "commands": [
           "npm install firebase-tools",
+          "npx nx run website:build",
           "firebase deploy --only hosting --config=firebase.website.json --token={args.token}"
         ],
         "parallel": false
