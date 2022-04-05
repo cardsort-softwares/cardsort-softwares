@@ -1,0 +1,28 @@
+{
+  "root": "apps/care-a-lot-homes-e2e",
+  "sourceRoot": "apps/care-a-lot-homes-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/care-a-lot-homes-e2e/cypress.json",
+        "devServerTarget": "care-a-lot-homes:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "care-a-lot-homes:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/care-a-lot-homes-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["care-a-lot-homes"]
+}

@@ -1,21 +1,28 @@
 {
   "projectType": "application",
-  "root": "apps/website",
-  "sourceRoot": "apps/website/src",
+  "root": "apps/care-a-lot-homes",
+  "sourceRoot": "apps/care-a-lot-homes/src",
   "prefix": "cardsort-softwares",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/website",
-        "index": "apps/website/src/index.html",
-        "main": "apps/website/src/main.ts",
-        "polyfills": "apps/website/src/polyfills.ts",
-        "tsConfig": "apps/website/tsconfig.app.json",
+        "outputPath": "dist/apps/care-a-lot-homes",
+        "index": "apps/care-a-lot-homes/src/index.html",
+        "main": "apps/care-a-lot-homes/src/main.ts",
+        "polyfills": "apps/care-a-lot-homes/src/polyfills.ts",
+        "tsConfig": "apps/care-a-lot-homes/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/website/src/favicon.ico", "apps/website/src/assets"],
-        "styles": ["apps/website/src/styles.scss"],
+        "assets": [
+          "apps/care-a-lot-homes/src/favicon.ico",
+          "apps/care-a-lot-homes/src/assets"
+        ],
+        "styles": [
+          "apps/care-a-lot-homes/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -34,8 +41,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/website/src/environments/environment.ts",
-              "with": "apps/website/src/environments/environment.prod.ts"
+              "replace": "apps/care-a-lot-homes/src/environments/environment.ts",
+              "with": "apps/care-a-lot-homes/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -55,10 +62,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "website:build:production"
+          "browserTarget": "care-a-lot-homes:build:production"
         },
         "development": {
-          "browserTarget": "website:build:development"
+          "browserTarget": "care-a-lot-homes:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -66,25 +73,25 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "website:build"
+        "browserTarget": "care-a-lot-homes:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/website/src/**/*.ts",
-          "apps/website/src/**/*.html"
+          "apps/care-a-lot-homes/src/**/*.ts",
+          "apps/care-a-lot-homes/src/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@angular-devkit/build-angular:karma",
       "options": {
-        "main": "apps/website/src/test.ts",
-        "tsConfig": "apps/website/tsconfig.spec.json",
-        "karmaConfig": "apps/website/karma.conf.js",
-        "polyfills": "apps/website/src/polyfills.ts",
+        "main": "apps/care-a-lot-homes/src/test.ts",
+        "tsConfig": "apps/care-a-lot-homes/tsconfig.spec.json",
+        "karmaConfig": "apps/care-a-lot-homes/karma.conf.js",
+        "polyfills": "apps/care-a-lot-homes/src/polyfills.ts",
         "styles": [],
         "scripts": [],
         "assets": []
@@ -96,10 +103,10 @@
         "commands": [
           "npm install firebase-tools",
           {
-            "command": "npx nx run website:build",
+            "command": "npx nx run care-a-lot-homes:build",
             "forwardAllArgs": false
           },
-          "firebase hosting:channel:deploy \"{args.channelId}\" --config=firebase.website.json --token={args.token}"
+          "firebase hosting:channel:deploy \"{args.channelId}\" --config=firebase.care-a-lot-homes.json --token={args.token}"
         ],
         "parallel": false
       }
@@ -110,10 +117,10 @@
         "commands": [
           "npm install firebase-tools",
           {
-            "command": "npx nx run website:build",
+            "command": "npx nx run care-a-lot-homes:build",
             "forwardAllArgs": false
           },
-          "firebase deploy --only hosting --config=firebase.website.json --token={args.token}"
+          "firebase deploy --only hosting --config=firebase.care-a-lot-homes.json --token={args.token}"
         ],
         "parallel": false
       }

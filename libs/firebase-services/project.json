@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/firebase-services",
+  "sourceRoot": "libs/firebase-services/src",
+  "prefix": "cardsort-softwares",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/firebase-services/src/**/*.ts",
+          "libs/firebase-services/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

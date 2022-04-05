@@ -7,6 +7,9 @@
       "hosting": {
         "core-website": [
           "cardsort-softwares"
+        ],
+        "careALot": [
+          "care-a-lot-homes-prod"
         ]
       }
     }
