@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "care-a-lot-homes": "apps/care-a-lot-homes",
+    "care-a-lot-homes-e2e": "apps/care-a-lot-homes-e2e",
     "website": "apps/website",
     "website-e2e": "apps/website-e2e"
   }
