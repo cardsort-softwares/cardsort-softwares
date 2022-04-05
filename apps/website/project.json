@@ -102,7 +102,7 @@
       "options": {
         "commands": [
           "npm install firebase-tools",
-          "firebase hosting:channel:deploy \"{args.channelId}\" --config=firebase.website.json"
+          "firebase hosting:channel:deploy \"{args.channelId}\" --config=firebase.website.json --token={args.token}"
         ],
         "parallel": false
       }
@@ -112,7 +112,7 @@
       "options": {
         "commands": [
           "npm install firebase-tools",
-          "firebase deploy --only hosting --config=firebase.website.json"
+          "firebase deploy --only hosting --config=firebase.website.json --token={args.token}"
         ],
         "parallel": false
       }

@@ -1,7 +1,7 @@
 {
   "npmScope": "cardsort-softwares",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "cli": {
     "defaultCollection": "@nrwl/angular"
