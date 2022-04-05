@@ -17,6 +17,9 @@
     "paths": {
       "@cardsort-softwares/firebase-services": [
         "libs/firebase-services/src/index.ts"
+      ],
+      "@cardsort-softwares/website-core-ui": [
+        "libs/website-core-ui/src/index.ts"
       ]
     }
   },

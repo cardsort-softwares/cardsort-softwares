@@ -5,6 +5,7 @@
     "care-a-lot-homes-e2e": "apps/care-a-lot-homes-e2e",
     "firebase-services": "libs/firebase-services",
     "website": "apps/website",
+    "website-core-ui": "libs/website-core-ui",
     "website-e2e": "apps/website-e2e"
   }
 }
