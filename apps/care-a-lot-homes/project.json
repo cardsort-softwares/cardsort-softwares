@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/care-a-lot-homes",
         "index": "apps/care-a-lot-homes/src/index.html",
@@ -18,7 +20,9 @@
           "apps/care-a-lot-homes/src/favicon.ico",
           "apps/care-a-lot-homes/src/assets"
         ],
-        "styles": ["apps/care-a-lot-homes/src/styles.scss"],
+        "styles": [
+          "apps/care-a-lot-homes/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -98,7 +102,10 @@
       "options": {
         "commands": [
           "npm install firebase-tools",
-          "npx nx run care-a-lot-homes:build",
+          {
+            "command": "npx nx run care-a-lot-homes:build",
+            "forwardAllArgs": false
+          },
           "firebase hosting:channel:deploy \"{args.channelId}\" --config=firebase.care-a-lot-homes.json --token={args.token}"
         ],
         "parallel": false
@@ -109,7 +116,10 @@
       "options": {
         "commands": [
           "npm install firebase-tools",
-          "npx nx run care-a-lot-homes:build",
+          {
+            "command": "npx nx run care-a-lot-homes:build",
+            "forwardAllArgs": false
+          },
           "firebase deploy --only hosting --config=firebase.care-a-lot-homes.json --token={args.token}"
         ],
         "parallel": false

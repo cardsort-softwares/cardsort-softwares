@@ -95,7 +95,10 @@
       "options": {
         "commands": [
           "npm install firebase-tools",
-          "npx nx run website:build",
+          {
+            "command": "npx nx run website:build",
+            "forwardAllArgs": false
+          },
           "firebase hosting:channel:deploy \"{args.channelId}\" --config=firebase.website.json --token={args.token}"
         ],
         "parallel": false
@@ -106,7 +109,10 @@
       "options": {
         "commands": [
           "npm install firebase-tools",
-          "npx nx run website:build",
+          {
+            "command": "npx nx run website:build",
+            "forwardAllArgs": false
+          },
           "firebase deploy --only hosting --config=firebase.website.json --token={args.token}"
         ],
         "parallel": false
