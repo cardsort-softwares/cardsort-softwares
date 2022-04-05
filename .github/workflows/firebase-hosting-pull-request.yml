@@ -1,0 +1,69 @@
+name: CI
+'on': pull_request
+
+env:
+  NX_CLOUD_DISTRIBUTED_EXECUTION: true
+
+jobs:
+  build-test-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Get head and base variables
+        uses: nrwl/nx-set-shas@v2
+      - name: Set up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: Cache NPM
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+            ${{ runner.os }}-
+      - name: Install Deps
+        run: npm install
+      - name: Start cloud run
+        run: npx nx-cloud start-ci-run
+      - name: Build affected
+        run: npx nx affected --target=build --parallel --max-parallel=3
+      - name: Test affected
+        run: npx nx affected --target=test --parallel --max-parallel=2
+      - name: Deploy affected
+        run: npx nx affected --target=deploy-staging --parallel --max-parallel=3
+      - name: Stop CI
+        run: npx nx-cloud stop-all-agents
+  agents:
+    runs-on: ubuntu-latest
+    name: Agent
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        agent: [1, 2, 3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Set up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: Cache NPM
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+            ${{ runner.os }}-
+      - name: Install Deps
+        run: npm install
+      - name: Start agent ${{ matrix.agent }}
+        run: npx nx-cloud start-agent
+
