@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/website-core-ui",
+  "sourceRoot": "libs/website-core-ui/src",
+  "prefix": "cardsort-softwares",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/website-core-ui/src/test.ts",
+        "tsConfig": "libs/website-core-ui/tsconfig.spec.json",
+        "karmaConfig": "libs/website-core-ui/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/website-core-ui/src/**/*.ts",
+          "libs/website-core-ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
