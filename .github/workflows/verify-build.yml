@@ -36,7 +36,7 @@ jobs:
       - name: Test affected
         run: npx nx affected --target=test --parallel --max-parallel=2
       - name: Deploy affected
-        run: npx nx affected --target=deploy-staging --parallel --max-parallel=3 --token=${{ env.TOKEN }} --channelId=${{github.payload.pull_request.head.ref }}
+        run: npx nx affected --target=deploy-staging --parallel --max-parallel=3 --token=${{ env.TOKEN }} --channelId=${{github.base_ref }}
       - name: Stop CI
         run: npx nx-cloud stop-all-agents
         if: always()
