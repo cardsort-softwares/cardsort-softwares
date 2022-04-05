@@ -98,6 +98,7 @@
       "options": {
         "commands": [
           "npm install firebase-tools",
+          "npx nx run care-a-lot-homes:build",
           "firebase hosting:channel:deploy \"{args.channelId}\" --config=firebase.care-a-lot-homes.json --token={args.token}"
         ],
         "parallel": false
