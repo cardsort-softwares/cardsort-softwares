@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/firebase-services",
+  "sourceRoot": "libs/firebase-services/src",
+  "prefix": "cardsort-softwares",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/firebase-services/src/test.ts",
+        "tsConfig": "libs/firebase-services/tsconfig.spec.json",
+        "karmaConfig": "libs/firebase-services/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/firebase-services/src/**/*.ts",
+          "libs/firebase-services/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

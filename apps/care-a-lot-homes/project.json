@@ -92,6 +92,26 @@
         "scripts": [],
         "assets": []
       }
+    },
+    "deploy-staging": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "npm install firebase-tools",
+          "firebase hosting:channel:deploy \"{args.channelId}\" --config=firebase.care-a-lot-homes.json --token={args.token}"
+        ],
+        "parallel": false
+      }
+    },
+    "deploy": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "npm install firebase-tools",
+          "firebase deploy --only hosting --config=firebase.care-a-lot-homes.json --token={args.token}"
+        ],
+        "parallel": false
+      }
     }
   },
   "tags": []
