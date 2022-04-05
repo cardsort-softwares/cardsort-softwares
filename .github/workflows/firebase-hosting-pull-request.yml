@@ -38,6 +38,7 @@ jobs:
         run: npx nx affected --target=deploy-staging --parallel --max-parallel=3
       - name: Stop CI
         run: npx nx-cloud stop-all-agents
+        if: always()
   agents:
     runs-on: ubuntu-latest
     name: Agent
