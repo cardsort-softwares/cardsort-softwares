@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cardsort-softwares"
+  },
+  "targets": {
+    "cardsort-softwares": {
+      "hosting": {
+        "core-website": [
+          "cardsort-softwares"
+        ]
+      }
+    }
+  }
+}
