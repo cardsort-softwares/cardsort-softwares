@@ -78,18 +78,6 @@
         ]
       }
     },
-    "test": {
-      "executor": "@angular-devkit/build-angular:karma",
-      "options": {
-        "main": "apps/website/src/test.ts",
-        "tsConfig": "apps/website/tsconfig.spec.json",
-        "karmaConfig": "apps/website/karma.conf.js",
-        "polyfills": "apps/website/src/polyfills.ts",
-        "styles": [],
-        "scripts": [],
-        "assets": []
-      }
-    },
     "deploy-staging": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {

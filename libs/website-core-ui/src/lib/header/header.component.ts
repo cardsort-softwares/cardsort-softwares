@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {ImageService} from "@cardsort-softwares/firebase-services";
+import {SafeUrl} from "@angular/platform-browser";
+import {catchError, map, Observable, of} from "rxjs";
+
+export interface IHeaderVM {
+  logo: SafeUrl
+}
 
 @Component({
   selector: 'cardsort-softwares-header',
@@ -6,10 +13,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public vm$: Observable<IHeaderVM> | undefined;
 
-  constructor() { }
+  constructor(
+    private readonly imageService: ImageService
+  ) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.vm$ = this.imageService.getImage$("core-website/logo.png")
+      .pipe(
+        map((image: SafeUrl) => {
+          return {
+            logo: image
+          }
+        }),
+        catchError((err) => {
+          console.error(err);
+          return of({} as IHeaderVM);
+        })
+      )
   }
 
 }
