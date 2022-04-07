@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import {WebsiteCoreUiModule} from "@cardsort-softwares/website-core-ui";
 import {initializeApp} from "firebase/app";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 import {environment} from "../environments/environment";
 
 @NgModule({
@@ -20,3 +21,4 @@ import {environment} from "../environments/environment";
 export class AppModule {}
 
 export const app = initializeApp(environment.firebase);
+export const recaptcha = initializeAppCheck(app, {provider: new ReCaptchaV3Provider(environment.recaptcha), isTokenAutoRefreshEnabled: true});
