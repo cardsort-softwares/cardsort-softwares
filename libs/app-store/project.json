@@ -1,0 +1,18 @@
+{
+  "projectType": "library",
+  "root": "libs/app-store",
+  "sourceRoot": "libs/app-store/src",
+  "prefix": "cardsort-softwares",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/app-store/src/**/*.ts",
+          "libs/app-store/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

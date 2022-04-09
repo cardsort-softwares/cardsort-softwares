@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@cardsort-softwares/app-store": ["libs/app-store/src/index.ts"],
       "@cardsort-softwares/firebase-services": [
         "libs/firebase-services/src/index.ts"
       ],
+      "@cardsort-softwares/storage": ["libs/storage/src/index.ts"],
       "@cardsort-softwares/website-core-ui": [
         "libs/website-core-ui/src/index.ts"
       ]

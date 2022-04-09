@@ -1,9 +1,11 @@
 {
   "version": 2,
   "projects": {
+    "app-store": "libs/app-store",
     "care-a-lot-homes": "apps/care-a-lot-homes",
     "care-a-lot-homes-e2e": "apps/care-a-lot-homes-e2e",
     "firebase-services": "libs/firebase-services",
+    "storage": "libs/storage",
     "website": "apps/website",
     "website-core-ui": "libs/website-core-ui",
     "website-e2e": "apps/website-e2e"

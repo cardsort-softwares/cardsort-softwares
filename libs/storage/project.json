@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/storage",
+  "sourceRoot": "libs/storage/src",
+  "prefix": "cardsort-softwares",
+  "targets": {
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "libs/storage/src/test.ts",
+        "tsConfig": "libs/storage/tsconfig.spec.json",
+        "karmaConfig": "libs/storage/karma.conf.js"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/storage/src/**/*.ts",
+          "libs/storage/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
